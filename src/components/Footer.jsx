@@ -2,7 +2,11 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa"
 import { motion } from "framer-motion"
 
-function Footer() {
+function Footer({ refs }) {
+  const handleScroll = (section) => {
+    refs[section]?.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const socialLinks = [
     { icon: <FaGithub />, href: "#", label: "GitHub" },
     { icon: <FaLinkedin />, href: "#", label: "LinkedIn" },
@@ -14,9 +18,7 @@ function Footer() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   }
 
@@ -26,7 +28,7 @@ function Footer() {
   }
 
   return (
-    <footer className=" border-t border-[#FFBD20] py-8 md:py-12">
+    <footer className="border-t border-[#FFBD20] py-8 md:py-12">
       <div className="md:w-9/12 w-full p-[20px] md:p-0 md:mx-auto">
         <motion.div
           variants={containerVariants}
@@ -47,25 +49,46 @@ function Footer() {
           <motion.div variants={itemVariants}>
             <h3 className="text-[#FFBD20] font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
+             <li>
+  <button
+    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+    className="text-gray-400 hover:text-[#FFBD20] transition"
+  >
+    Home
+  </button>
+</li>
+
               <li>
-                <a href="#" className="text-gray-400 hover:text-[#FFBD20] transition">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#FFBD20] transition">
+                <button
+                  onClick={() => handleScroll("projects")}
+                  className="text-gray-400 hover:text-[#FFBD20] transition"
+                >
                   Projects
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-[#FFBD20] transition">
-                  Resume
-                </a>
+                <button
+                  onClick={() => handleScroll("experience")}
+                  className="text-gray-400 hover:text-[#FFBD20] transition"
+                >
+                  Experience
+                </button>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-[#FFBD20] transition">
+                <button
+                  onClick={() => handleScroll("about")}
+                  className="text-gray-400 hover:text-[#FFBD20] transition"
+                >
+                  Skills / About
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleScroll("contact")}
+                  className="text-gray-400 hover:text-[#FFBD20] transition"
+                >
                   Contact
-                </a>
+                </button>
               </li>
             </ul>
           </motion.div>

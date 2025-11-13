@@ -13,6 +13,7 @@ import Aboutme from './Aboutme';
 import ProjectsPage from './ProjectsPage';
 import ContactUs from './ContactUs'
 import Footer from './Footer'
+import { useRef } from 'react'
 
 
 
@@ -26,6 +27,11 @@ function HomePage() {
         { icon: <FaLinkedin />, href: "#", label: "LinkedIn" },
     ]
 
+    const homeRef = useRef(null);
+    const experienceRef = useRef(null);
+    const ProjectsPageRef = useRef(null);
+    const AboutmeRef = useRef(null);
+    const ContactUsRef = useRef(null);
     return (
         <div className=' min-h-[100vh] bg-mine-shaft-950 text-gray-300  '>
             <div className='md:w-9/12 w-full p-[5px] md:p-0 md:mx-auto flex justify-between items-center py-4 '>
@@ -151,11 +157,33 @@ function HomePage() {
                 </div>
             </div>
 
-            <Experience />
-            <ProjectsPage/>
-            <Aboutme />
-            <ContactUs/>
-            <Footer/>
+
+            <div ref={experienceRef}>
+                <Experience />
+            </div>
+            <div ref={ProjectsPageRef}>
+                <ProjectsPage />
+            </div>
+
+            <div ref={AboutmeRef}>
+                <Aboutme />
+            </div>
+            <div ref={ContactUsRef}>
+                <ContactUs />
+            </div>
+
+
+
+
+            <Footer
+                refs={{
+                    home: homeRef,
+                    experience: experienceRef,
+                    projects: ProjectsPageRef,
+                    about: AboutmeRef,
+                    contact: ContactUsRef
+                }}
+            />
         </div >
     )
 }
