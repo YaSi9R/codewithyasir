@@ -89,7 +89,12 @@ function HomePage() {
                         <button className="px-5 py-2 bg-white text-black rounded hover:bg-[#FFBD20] hover:text-white border-[#FFBD20]">
                             Download CV
                         </button>
-                        <button className="px-5 py-2 border border-white text-white rounded hover:bg-white hover:text-black transition bg-[#FFBD20]">
+                        <button className="px-5 py-2 border border-white text-white rounded hover:bg-white hover:text-black transition bg-[#FFBD20]" onClick={() =>
+    window.open(
+      "https://wa.me/919720823331?text=Hi%20Yasir!%20I%20want%20to%20talk%20about%20your%20qualifications.",
+      "_blank"
+    )
+  }>
                             Let's Talk
                         </button>
                     </div>
