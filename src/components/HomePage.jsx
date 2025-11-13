@@ -22,9 +22,9 @@ import { useRef } from 'react'
 function HomePage() {
     const [click, setClick] = useState(false);
     const socialIcons = [
-        { icon: <FaGithub />, href: "#", label: "GitHub" },
-        { icon: <SiLeetcode />, href: "#", label: "LeetCode" },
-        { icon: <FaLinkedin />, href: "#", label: "LinkedIn" },
+        { icon: <FaGithub />, href: "https://github.com/YaSi9R", label: "GitHub" },
+        { icon: <SiLeetcode />, href: "https://leetcode.com/u/Yasir12", label: "LeetCode" },
+        { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/mohd-yasir-5b4ba9288", label: "LinkedIn" },
     ]
 
     const homeRef = useRef(null);
@@ -86,15 +86,14 @@ function HomePage() {
                     </p>
 
                     <div className="mt-6 flex gap-4 flex-wrap">
-                        <button className="px-5 py-2 bg-white text-black rounded hover:bg-[#FFBD20] hover:text-white border-[#FFBD20]">
-                            Download CV
-                        </button>
+                        <a className="px-5 py-2 bg-white text-black rounded hover:bg-[#FFBD20] hover:text-white border-[#FFBD20]" href="/Mohd_yasir_resume.pdf">Download CV</a>
+
                         <button className="px-5 py-2 border border-white text-white rounded hover:bg-white hover:text-black transition bg-[#FFBD20]" onClick={() =>
-    window.open(
-      "https://wa.me/919720823331?text=Hi%20Yasir!%20I%20want%20to%20talk%20about%20your%20qualifications.",
-      "_blank"
-    )
-  }>
+                            window.open(
+                                "https://wa.me/919720823331?text=Hi%20Yasir!%20I%20want%20to%20talk%20about%20your%20qualifications.",
+                                "_blank"
+                            )
+                        }>
                             Let's Talk
                         </button>
                     </div>
@@ -103,7 +102,7 @@ function HomePage() {
                         {socialIcons.map((social, index) => (
                             <a
                                 key={index}
-                                href={social.link}
+                                href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-200 hover:text-[#FFBD20] text-2xl transition cursor-pointer"

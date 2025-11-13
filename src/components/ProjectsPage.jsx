@@ -134,12 +134,14 @@ export default function ProjectsPage() {
                 <div className="flex gap-4">
                   <a
                     href={project.github}
+                    target="_blank"
                     className="flex items-center gap-2 text-black hover:text-[#FFBD20] transition"
                   >
                     <FaGithub  className=""/> Code
                   </a>
                   <a
                     href={project.live}
+                    target="_blank"
                     className="flex items-center gap-2 text-black hover:text-[#FFBD20] transition"
                   >
                     <FaExternalLinkAlt /> Live

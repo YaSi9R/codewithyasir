@@ -101,6 +101,7 @@ function Footer({ refs }) {
                                 <a
                                     key={index}
                                     href={social.href}
+                                    target="_blank"
                                     className="text-gray-400 hover:text-[#FFBD20] text-xl transition transform hover:scale-110"
                                     title={social.label}
                                 >
