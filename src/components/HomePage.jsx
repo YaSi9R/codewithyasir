@@ -9,6 +9,10 @@ import { SiLeetcode } from "react-icons/si";
 import boy from "../assets/Boy.png";
 import { motion } from 'framer-motion';
 import Experience from './Experience';
+import Aboutme from './Aboutme';
+import ProjectsPage from './ProjectsPage';
+import ContactUs from './ContactUs'
+import Footer from './Footer'
 
 
 
@@ -23,15 +27,15 @@ function HomePage() {
     ]
 
     return (
-        <div className=' min-h-[100vh] bg-mine-shaft-950 text-white '>
+        <div className=' min-h-[100vh] bg-mine-shaft-950 text-gray-300  '>
             <div className='md:w-9/12 w-full p-[5px] md:p-0 md:mx-auto flex justify-between items-center py-4 '>
                 <Link to="/">
                     <img src={logo} alt="logo" className='w-[160px] h-[80px] object-contain' /></Link>
                 <button className='flex flex-row border border-white h-[25px] rounded-lg md:mr-0 mr-2'>
 
 
-                    <MdOutlineDarkMode className='text-2xl text-white' />
-                    <MdCircle className='text-2xl text-white' />
+                    <MdOutlineDarkMode className='text-2xl text-gray-300 ' />
+                    <MdCircle className='text-2xl text-gray-300 ' />
 
 
                 </button>
@@ -67,7 +71,7 @@ function HomePage() {
                             repeat={Infinity}
                         />
                     </h1>
-                    <p className="text-base md:text-lg leading-relaxed text-white mt-4">
+                    <p className="text-base md:text-lg leading-relaxed text-gray-300  mt-4">
                         Hey! I’m a software engineer who thrives on solving problems —<br />
                         This is my <span className='text-[#FFBD20]'>portfolio</span>, where
                         you’ll find the <span className='text-[#FFBD20]'>projects</span> I’ve
@@ -108,7 +112,7 @@ function HomePage() {
                         initial={{ x: -50, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         className="absolute top-[10px] left-1 md:top-8 md:left-0 bg-white text-[#FFBD20] px-2 md:px-4 py-1 md:py-2 rounded-lg shadow-md border-2 border-blue-400"
                     >
                         <span className="text-xs md:text-sm font-semibold">Frontend Developer</span>
@@ -119,7 +123,7 @@ function HomePage() {
                         initial={{ x: 100, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         className="absolute top-[60px] right-2 md:top-[120px] md:right-4 bg-white text-[#FFBD20] px-2 md:px-4 py-1 md:py-2 rounded-lg shadow-md border border-yellow-400"
                     >
                         <span className="text-xs md:text-sm font-semibold">MERN Stack Developer</span>
@@ -129,7 +133,7 @@ function HomePage() {
                         initial={{ x: -50, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         className="absolute bottom-[80px] left-2 md:bottom-[120px] md:left-1 bg-white text-[#FFBD20] px-2 md:px-4 py-1 md:py-2 rounded-lg shadow-md border border-purple-400"
                     >
                         <span className="text-xs md:text-sm font-semibold">Web Developer</span>
@@ -139,17 +143,19 @@ function HomePage() {
                         initial={{ x: 100, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         className="absolute bottom-2 right-2 md:bottom-4 md:right-0 bg-white text-[#FFBD20] px-2 md:px-4 py-1 md:py-2 rounded-lg shadow-md border border-green-400"
                     >
                         <span className="text-xs md:text-sm font-semibold">Backend Developer</span>
                     </motion.div>
                 </div>
             </div>
-            
-             <Experience/>
-              
 
+            <Experience />
+            <ProjectsPage/>
+            <Aboutme />
+            <ContactUs/>
+            <Footer/>
         </div >
     )
 }
