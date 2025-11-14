@@ -86,7 +86,7 @@ function HomePage() {
                     </p>
 
                     <div className="mt-6 flex gap-4 flex-wrap">
-                        <a className="px-5 py-2 bg-white text-black rounded hover:bg-[#FFBD20] hover:text-white border-[#FFBD20]" href="/Mohd_yasir_resume.pdf">Download CV</a>
+                        <a className="px-5 py-2 bg-white text-black rounded hover:bg-[#FFBD20] hover:text-white border-[#FFBD20]" href="/Mohd_Yasir_Resume.pdf">Download CV</a>
 
                         <button className="px-5 py-2 border border-white text-white rounded hover:bg-white hover:text-black transition bg-[#FFBD20]" onClick={() =>
                             window.open(
