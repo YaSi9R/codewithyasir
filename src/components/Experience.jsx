@@ -310,11 +310,11 @@ function Experience() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16"
             >
               {skillCategories1.map((cat, index) => (
-                <motion.div key={index} variants={itemVariants} viewport={{ once: false, amount: 0.3 }} className="group relative overflow-hidden rounded-2xl">
+                <motion.div key={index} variants={itemVariants} viewport={{ once: true, amount: 0.3 }} className="group relative overflow-hidden rounded-2xl">
                   <div
                     className={`absolute inset-0 bg-gradient-to-r ${cat.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
                   />
